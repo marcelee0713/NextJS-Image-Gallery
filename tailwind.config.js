@@ -23,6 +23,12 @@ module.exports = {
       spacing: {
         "1px": "1px",
       },
+      transitionProperty: {
+        height: "max-height",
+      },
+      maxHeight: {
+        navHeight: "280px",
+      },
     },
   },
   plugins: [],
