@@ -1,3 +1,5 @@
+Hello it's me Marcel I'm back with Web now and I'm learning [Next.js](https://nextjs.org/) for now. Me and [Flutter](https://flutter.dev/) has a lot of love and hate relationship but I'm still going to use it as a hobby now!
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
