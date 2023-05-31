@@ -22,7 +22,7 @@ export default function RootLayout({
     <html className="h-screen max-w-full" lang="en">
       <body className={`${roboto.className} bg-slate-100 h-screen max-w-full`}>
         <NavigationBar />
-        <main className="flex flex-col p-3">{children}</main>
+        <main className="flex flex-col p-3 h-full">{children}</main>
       </body>
     </html>
   );

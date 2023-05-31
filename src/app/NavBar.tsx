@@ -10,7 +10,7 @@ export default function NavigationBar() {
   return (
     <>
       <header
-        className={`flex gap-2 items-center bg-slate-700 text-slate-100 py-4 sm:flex-col sm:items-stretch sm:duration-500 sm:ease-in ${
+        className={`flex gap-2 items-center bg-slate-700 sticky top-0 text-slate-100 py-4 sm:flex-col sm:items-stretch sm:duration-500 sm:ease-in ${
           isPressed ? `max-h-navHeight` : `max-h-20`
         }`}
       >
