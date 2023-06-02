@@ -1,5 +1,7 @@
 "use client";
 
+import { BiErrorCircle } from "react-icons/bi";
+
 type Error = {
   error: Error;
   callback: () => void;
@@ -7,10 +9,9 @@ type Error = {
 
 export default async function Error({ error, callback }: Error) {
   return (
-    <div>
-      <h1>Error!</h1>
-      <p>Please try again later!</p>
-      <button onClick={callback}>Try again</button>
+    <div className="flex flex-col gap-2 items-center justify-center">
+      <BiErrorCircle size={50} className="text-red-500" />
+      <p className="text-center">Something went wrong, please try again.</p>
     </div>
   );
 }

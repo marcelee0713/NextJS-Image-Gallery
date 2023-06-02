@@ -13,7 +13,7 @@ module.exports = {
 
       lg: { max: "1023px" },
 
-      md: { max: "767px" },
+      md: { max: "800px" },
 
       sm: { max: "600px" },
 
@@ -28,6 +28,9 @@ module.exports = {
       },
       maxHeight: {
         navHeight: "280px",
+      },
+      fontSize: {
+        "14px": "14px",
       },
     },
   },

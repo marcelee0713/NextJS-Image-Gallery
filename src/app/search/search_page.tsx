@@ -3,7 +3,6 @@
 import { UnsplashImage } from "@/models/unsplash-image";
 import { FormEvent, useState } from "react";
 import Image from "next/image";
-import Loading from "../loading";
 import { BiErrorCircle } from "react-icons/bi";
 import { GiShrug } from "react-icons/gi";
 
