@@ -40,10 +40,12 @@ export default function SearchPage() {
     }
   }
 
-  window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY;
-    setScrollPos(scrolled);
-  });
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      setScrollPos(scrolled);
+    });
+  }
 
   return (
     <div className="flex flex-col h-full gap-5">
