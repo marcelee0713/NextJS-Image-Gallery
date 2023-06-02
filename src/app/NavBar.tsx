@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { FaUnsplash, FaHamburger } from "react-icons/fa";
+import { FaUnsplash, FaHamburger, FaCaretDown } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 
 export default function NavigationBar() {
   let [isPressed, setIsPressed] = useState(false);
+  let [topicIsPressed, setTopicIsPressed] = useState(false);
   const pathname = usePathname();
   return (
     <>
@@ -89,22 +90,88 @@ export default function NavigationBar() {
             </div>
           </Link>
 
-          <Link
-            href={"/topics"}
-            className={`${!isPressed && `sm:pointer-events-none`}`}
+          <div
+            onClick={() => setTopicIsPressed(topicIsPressed ? false : true)}
+            className={`h-10 relative sm:gap-2 flex sm:flex-row sm:px-3 transition-all sm:duration-300 duration-500 ${
+              isPressed
+                ? `sm:opacity-100 sm:duration-500`
+                : `sm:duration-500 sm:opacity-0`
+            } ${topicIsPressed ? `relative` : `static`}`}
           >
+            <div className="flex gap-2 items-center justify-center">
+              <div>Topics</div>
+              <div
+                className={`transition-all duration-300 ${
+                  topicIsPressed ? `-rotate-90` : `rotate-0`
+                }`}
+              >
+                <FaCaretDown size={15} />
+              </div>
+            </div>
+
             <div
-              className={`hover:bg-slate-600 ${
-                pathname === "/topics" && `bg-slate-600`
-              } h-10 flex items-center px-3 transition-all sm:duration-300 duration-500 rounded-md sm:rounded-none ${
-                isPressed
-                  ? `sm:opacity-100 sm:duration-500`
-                  : `sm:duration-300 sm:opacity-0`
+              className={`flex flex-col absolute top-10 sm:top-0 sm:flex-row sm:left-24 transition-all duration-500 opacity-0 bg-slate-800 rounded ${
+                topicIsPressed ? `opacity-100` : `opacity-0`
               }`}
             >
-              Topics
+              <Link
+                href={"/topics/health"}
+                className={`${!isPressed && `sm:pointer-events-none`} ${
+                  !topicIsPressed && `pointer-events-none`
+                }`}
+              >
+                <div
+                  className={`hover:bg-slate-600 ${
+                    pathname === "/topics/health" && `bg-slate-600`
+                  } h-10 flex items-center px-3 transition-all sm:duration-500 duration-500 ${
+                    isPressed
+                      ? `sm:opacity-100 sm:duration-500`
+                      : `sm:duration-500 sm:opacity-0`
+                  }`}
+                >
+                  Health
+                </div>
+              </Link>
+
+              <Link
+                href={"/topics/fitness"}
+                className={`${!isPressed && `sm:pointer-events-none`} ${
+                  !topicIsPressed && `pointer-events-none`
+                }`}
+              >
+                <div
+                  className={`hover:bg-slate-600 ${
+                    pathname === "/topics/fitness" && `bg-slate-600`
+                  } h-10 flex items-center px-3 transition-all sm:duration-500 duration-500 ${
+                    isPressed
+                      ? `sm:opacity-100 sm:duration-500`
+                      : `sm:duration-500 sm:opacity-0`
+                  }`}
+                >
+                  Fitness
+                </div>
+              </Link>
+
+              <Link
+                href={"/topics/coding"}
+                className={`${!isPressed && `sm:pointer-events-none`} ${
+                  !topicIsPressed && `pointer-events-none`
+                }`}
+              >
+                <div
+                  className={`hover:bg-slate-600 ${
+                    pathname === "/topics/coding" && `bg-slate-600`
+                  } h-10 flex items-center px-3 transition-all sm:duration-500 duration-500 ${
+                    isPressed
+                      ? `sm:opacity-100 sm:duration-500`
+                      : `sm:duration-500 sm:opacity-0`
+                  }`}
+                >
+                  Coding
+                </div>
+              </Link>
             </div>
-          </Link>
+          </div>
 
           <Link
             href={"/search"}
