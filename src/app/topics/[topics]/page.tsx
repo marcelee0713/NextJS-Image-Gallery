@@ -1,4 +1,4 @@
-import { UnsplashImage } from "@/models/unplash-image";
+import { UnsplashImage } from "@/models/unsplash-image";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -40,16 +40,19 @@ export default async function TopicsPage({ params: { topics } }: PageProps) {
         <strong>cached for subsequent requests</strong>. This can be disabled
       </div>
       <div className="text-xl font-bold">{topics}</div>
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-4 h-screen gap-3 sm:grid-cols-2">
         {images.map((image) => (
-          <Image
-            src={image.urls.raw}
-            width={250}
-            height={250}
-            alt={image.description}
-            key={image.urls.raw}
-            className="object-cover m-1 rounded-md"
-          />
+          <>
+            <div className="relative w-full h-96">
+              <Image
+                src={image.urls.raw}
+                alt={image.description}
+                key={image.urls.raw}
+                fill
+                className="w-full h-full object-cover m-1 rounded-md"
+              />
+            </div>
+          </>
         ))}
       </div>
     </>

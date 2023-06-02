@@ -1,4 +1,4 @@
-import { UnsplashImage } from "@/models/unplash-image";
+import { UnsplashImage } from "@/models/unsplash-image";
 import Image from "next/image";
 import Link from "next/link";
 
